@@ -1,6 +1,6 @@
 <launch>
 <!-- map server -->
-<arg name="map_file" default="$(find my_robot)/maps/map.yam1"/>
+<arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
 <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
  
  <node name="map_odom_broadcaster" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 map odom 100" />
@@ -37,11 +37,11 @@
 <!-- Move Base -->
 <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
 
-<rosparam file="$(find my_robot )/config/costmap_common_params.yaml " command="load" ns="global_costmap" />
-<rosparam file="$(find my_robot )/config/costmap_common_params.yaml " command="load" ns="local_costmap" />
-<rosparam file="$(find my_robot )/config/local_costmap_params.yaml " command="load"  />
-<rosparam file="$(find my_robot )/config/global_costmap_params.yaml " command="load"  />
-<rosparam file="$(find my_robot )/config/base_local_planner_params.yaml " command="load"  />
+<rosparam file="$(find my_robot )/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
+<rosparam file="$(find my_robot )/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+<rosparam file="$(find my_robot )/config/local_costmap_params.yaml" command="load"  />
+<rosparam file="$(find my_robot )/config/global_costmap_params.yaml" command="load"  />
+<rosparam file="$(find my_robot )/config/base_local_planner_params.yaml" command="load"  />
 
 <remap from="cmd_vel" to="cmd_vel"/>
 <remap from="odom" to="odom"/>
