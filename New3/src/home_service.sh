@@ -7,4 +7,4 @@ xterm -e "roslaunch my_robot amcl.launch" &
 sleep 3
 xterm -e "rosrun pick_objects pick_objects" &
 sleep 3
-xterm -e "rosrun add_makers add_makers2"
+xterm -e "rosrun add_makers add_makers_final"
